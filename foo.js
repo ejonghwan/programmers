@@ -104,7 +104,81 @@ function solution4(list, compl) {
     return result;
 }
 
-solution4(list, compl)
-solution4(list2, compl2)
-solution4(list3, compl3)
-solution4(list4, compl4)
+// console.log( solution4(list, compl) )
+// console.log( solution4(list2, compl2) )
+// console.log( solution4(list3, compl3) )
+// console.log( solution4(list4, compl4) )
+
+
+// 꼼수
+function solution5(list, compl) {
+    let lists = list.sort()
+    let compls = compl.sort()
+    for(let i = 0; i < lists.length; i++) {
+        if(lists[i] !== compls[i]) {
+            return lists[i] 
+        }
+    }
+    console.log(lists, compls)
+}
+
+
+console.log( solution5(list, compl) )
+
+
+
+// 선생님이 고쳐준거 
+function solution4(list, compl) {
+    let overlap = list.map(item => {
+        return {
+            name : item,
+            count: 1,
+        }
+    }).reduce((a, b) => {
+        a[b.name] = (a[b.name] || 0) + b.count
+        return a
+    }, {});
+
+    compl.forEach( com => {
+        overlap[com] = overlap[com] - 1;
+    });
+
+    return Object.keys(overlap).filter(k => overlap[k] > 0)[0];
+}
+
+
+//선생님 답
+function solution(participant, completion) {
+    let answer = ''
+    let cc = completion.reduce( (acc, c) => {
+        if(acc[c]){
+            acc[c] = acc[c] + 1;
+        } else{
+            acc[c] = 1;
+        } return acc;}, {});
+
+    participant.forEach(p => {
+        let c = cc[p];
+        if(!c || c === 0) {
+            answer = p;
+        } else
+            cc[p] = c - 1
+    });
+    return answer;  
+}
+
+
+
+
+// $$$$$$$$$$$$$$$$$$$$$$
+
+let arrrr = [5, 9, 7, 10]
+
+function solution6(arr, num) {
+    let arr2 = arr.sort( (a, b) => a - b );
+    let result = arr2.filter(n => n % num === 0)
+
+    return result
+}
+
+console.log( solution6(arrrr, 5) ) 
