@@ -198,4 +198,4 @@ function solution7(n, m) {
     return result
 }
 
-console.log(solution7(3,5))
+// console.log(solution7(3,5))
