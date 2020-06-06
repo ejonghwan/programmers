@@ -199,3 +199,40 @@ console.log( solution6(arrrr, 5) )
 // }
 
 // console.log(solution7(3,5))
+
+
+
+
+//promise 바닐라 
+function pro(bool) {
+    if(!bool) {
+        setTimeout(function() {
+            console.log(2)
+            pro(true)
+        }, 3000)
+    } else {
+        console.log(3)
+    }
+}
+console.log(1)
+pro(false)
+
+
+function promise() {
+    return new Promise((resolve, reject) => {
+        setTimeout(function() {
+            console.log(5)
+            resolve()
+        }, 6000)
+    })
+    
+}
+
+console.log(4)
+promise().then(() => {
+    console.log(6)
+})
+
+
+
+
