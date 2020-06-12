@@ -228,10 +228,10 @@ function promise() {
     
 }
 
-console.log(4)
-promise().then(() => {
-    console.log(6)
-})
+// console.log(4)
+// promise().then(() => {
+//     console.log(6)
+// })
 
 
 
