@@ -186,19 +186,19 @@ console.log( solution6(arrrr, 5) )
 
 // ########################
 
-// function solution7(n, m) {
-//     let result = '';
-//     for(let i = 0; i < n; i++) {
-//         result += '\n';
-//         for(let i = 0; i < m; i++) {
-//             result += '*';
-//         }
+function solution7(n, m) {
+    let result = '';
+    for(let i = 0; i < n; i++) {
+        result += '\n';
+        for(let i = 0; i < m; i++) {
+            result += '*';
+        }
         
-//     }
-//     return result;
-// }
+    }
+    return result;
+}
 
-// console.log(solution7(3,5))
+console.log(solution7(3,5))
 
 
 
