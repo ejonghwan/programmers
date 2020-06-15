@@ -181,7 +181,7 @@ function solution6(arr, num) {
     return result
 }
 
-console.log( solution6(arrrr, 5) ) 
+// console.log( solution6(arrrr, 5) ) 
 
 
 // ########################
